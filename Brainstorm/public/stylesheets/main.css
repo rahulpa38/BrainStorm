@@ -1,0 +1,147 @@
+/* main page */
+
+.container  {
+    margin: auto;
+    background-color: #EEEEEE;
+}
+
+
+#login {
+    display: block;
+    padding-top: 20px;
+}
+
+#login p {
+    text-align: right;
+    font-family: 'Indie Flower', cursive;
+    font-size: 18px;
+    padding-right: 50px;
+}
+
+#logo{
+    display: block;
+}
+
+#logo img {
+    display: block;
+    margin: 0px auto 20px auto;
+}
+
+#title {
+    display: block !important;
+    text-align: center;
+    font-family: 'Major Mono Display', monospace;
+    padding-bottom: 30px;
+}
+
+#mainav {
+    display: block;
+    margin-left: 35.5%;
+}
+
+#mainav a {
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 22px;
+}
+
+.sidenav {
+    padding-top: 20px;
+}
+
+.sidenav li {
+    padding-left: 30px;
+}
+
+.sidenav a {
+    color: #ff6a80;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 18px;
+}
+
+.sidenav a:hover, a:active {
+    color: #ff9dab;
+}
+
+#content {
+    padding-right: 30px;
+    margin-top: 20px;
+}
+
+#content p {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18px;
+}
+
+#socrates {
+    display: block;
+    margin: 0 auto;
+}
+
+footer {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+}
+
+footer a {
+    color: #ff6a80;
+}
+
+footer a:hover, a:active {
+    color: #ff9dab;
+}
+
+
+/* categories */
+
+.category {
+    margin: auto;
+    text-align: center;
+    list-style-type: none;
+}
+
+.category ul {
+    list-style-type: none;
+}
+
+.category h3, a {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* item */
+
+.breadcrumb-item a {
+    font-size: 13px;
+}
+
+
+.item-content {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+.item-content h3, p {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.button {
+    padding: 10px;
+}
+
+
+
+/* myitem */
+
+th, td {
+    padding: 10px;  
+}
+
+#share {
+    padding-left: 20px;
+}
+
+.back-button {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,11 @@
+<nav class="mainav navbar-light bg-light navbar-expand-sm">
+    <div id="mainav" class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+          <%if(isloggedin){%><a href="/logout">Sign out</a><%}else{%><a href="/myItems/signIn">Sign in</a><%}%>
+            <li class="nav-item">
+              <%if(isloggedin){%><a class="nav-link" href="/myItems">My Brainpicks</a><%}else{%><a href="/myItems/signIn">My Brainpicks</a><%}%>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#about">Cart</a></li>
+        </ul>
+    </div>
+</nav>

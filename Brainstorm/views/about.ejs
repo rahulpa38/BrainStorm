@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang = 'en'>
+<head>
+  <meta charset="utf-8">
+        <title>BrainStorm</title>
+        <link rel="icon" type="image/x-icon" href="assests/img/favicon.ico"/>
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>    
+        <link href="stylesheets/main.css" rel="stylesheet" type="text/css" media="all">
+        <link href="public/fontawesome/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Indie+Flower%7CGloria+Hallelujah%7CKalam%7CRoboto+Condensed%7CMajor+Mono+Display">
+</head>
+<body>
+
+    <!-- CONTAINER -->
+
+        <div class="container">
+
+            <!-- HEADER -->
+
+            <% include partials/header.ejs %>
+
+
+            <!-- MAIN NAV -->
+
+            <% include partials/user-navigation.ejs %>
+
+
+            <!-- BODY -->
+
+            <div class="jumbotron container">
+                
+                <div class="row">
+                    <div class="col-lg-2 col-sm-12">
+                        
+                        <!-- SIDENAV -->
+
+                        <% include partials/site-navigation.ejs %>
+                    </div>
+                    
+                    <div id="content" class="col-lg-10 col-sm-12">
+                        
+                        <!-- MAIN CONTENT -->
+                        
+                        <p>Brainstorm is a blog and a book of interviews collected from the London Underground, the New York City Subway, and the Shanghai Metro. The purpose of Brainstorm is to share stories, and motivate people. Readers can add in their own stories of inspiration as well.</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <% include partials/footer.ejs %>
+
+        </div>
+
+</body>
+</html>

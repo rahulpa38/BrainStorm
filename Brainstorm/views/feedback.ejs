@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html lang = 'en'>
+<head>
+  <meta charset="utf-8">
+        <title>BrainStorm</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+        <link rel="icon" type="image/x-icon" href="assests/img/favicon.ico"/>
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
+        <link href="/stylesheets/main.css" rel="stylesheet" type="text/css" media="all">
+        <link href="/fontawesome/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Indie+Flower%7CGloria+Hallelujah%7CKalam%7CRoboto+Condensed%7CMajor+Mono+Display">
+</head>
+<body>
+
+    <!-- CONTAINER -->
+
+        <div class="container">
+
+            <!-- HEADER -->
+
+            <% include partials/header.ejs %>
+
+
+            <!-- MAIN NAV -->
+
+            <% include partials/user-navigation.ejs %>
+
+
+            <!-- BODY -->
+
+            <div class="jumbotron container">
+
+                <div class="row">
+                    <div class="col-lg-2 col-sm-12">
+
+                        <!-- SIDENAV -->
+
+                        <% include partials/site-navigation.ejs %>
+                    </div>
+                   
+                    <div id="content" class="col-lg-10 col-sm-12">
+
+                        <!-- MAIN CONTENT -->
+
+                        <h3>Your feeback is required</h3>
+                        <br>
+
+                        <div>
+                          <img src="<%= data.item[0].imgUrl %>"alt="<%= data.item[0].itemName %>">
+                        
+                          <div>
+                              <br>
+                            <form class="form-check-form-check-inline" action="/feedback/update/<%= data.item[0].itemCode %>" method="post">
+                            <input type="hidden" name="feedbackHidden" value="rating">
+                            <input type="hidden" name="itemCode" value="<%= data.item[0].itemCode %>">
+                            <input type="hidden" name="itemList" value="<%= data.item[0].itemCode %>">
+                            <select name="rating" value="rating">
+                              <option class="button" value="1">1</option>
+                              <option class="button" value="2">2</option>
+                              <option class="button" value="3">3</option>
+                              <option class="button" value="4">4</option>
+                              <option class="button" value="5">5</option>
+                            </select>
+                              <br>
+                            <button type="submit" class="button">Confirm Rating</button>
+                            </form>
+                            </div>
+                            
+                            <form action="/feedback/update/<%=data.item[0].itemCode%>" method="post">
+                          <input type="hidden" name="feedbackHidden" value="madeIt">
+                          <input type="hidden" name="itemCode" value="<%= data.item[0].itemCode%>">
+                          <input type="hidden" name="itemList" value="<%= data.item[0].itemCode%>">
+                          <div class="form-check-form-check-inline">
+                                        <div>
+                                            <br>
+                                            <label for="Yes">Yes</label>
+                                            <input type="radio" value="true">
+                                        </div>
+                                        <div>
+                                            <label for="No">No</label>
+                                            <input type="radio" value="false">
+                                        </div>
+                                        <div>
+                                            <button type="submit" class="button">Update Made It</button>
+                                        </div>
+                          </div>
+                          </form>
+                        </div>
+<!--
+                        <div class="main-page-content">
+                          <h4> <%= data.item[0].itemName %> </h4>
+                          <h5> <%= data.item[0].catalogCategory %> <br><br> <%= data.item[0].rating %> </h5>
+                        </div>
+                        <div class="main-page-desc">
+                          <p> <%= data.item[0].description %> </p>
+                        </div>
+-->
+                        
+                        <div>
+                            <br>
+                          <h4> <%= data.item[0].itemName %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Stars:&nbsp;&nbsp;<%= data.item[0].rating%></h4>
+                          <br>
+                          <h5> <%= data.item[0].catalogCategory %></h5>
+                        </div>
+                        <div>
+                            <br>
+                          <p> <%= data.item[0].description %> </p>
+                        </div>
+                        
+                      </div>
+                </div>
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <% include partials/footer.ejs %>
+
+        </div>
+
+    </body>
+
+</html>

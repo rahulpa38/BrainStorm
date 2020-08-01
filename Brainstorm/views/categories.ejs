@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang = 'en'>
+<head>
+  <meta charset="utf-8">
+        <title>BrainStorm</title>
+        <link rel="icon" type="image/x-icon" href="assests/img/favicon.ico"/>
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>    
+        <link href="/stylesheets/main.css" rel="stylesheet" type="text/css" media="all">
+        <link href="/fontawesome/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Indie+Flower%7CGloria+Hallelujah%7CKalam%7CRoboto+Condensed%7CMajor+Mono+Display">
+</head>
+<body>
+
+    <!-- CONTAINER -->
+
+        <div class="container">
+
+            <!-- HEADER -->
+
+            <% include partials/header.ejs %>
+
+
+            <!-- MAIN NAV -->
+
+            <% include partials/user-navigation.ejs %>
+
+
+            <!-- BODY -->
+
+            <div class="jumbotron container">
+                
+                <div class="row">
+                    <div class="col-lg-2 col-sm-12">
+                        
+                        <!-- SIDENAV -->
+
+                        <% include partials/site-navigation.ejs %>
+                    </div>
+                    
+                    <div id="content" class="col-lg-10 col-sm-12">
+                        
+                        <!-- MAIN CONTENT -->
+  
+                        <%
+                        console.log("Categories:"+data.categories[0]);
+                        for(var i=0;i<data.categories.length;i++){ %>
+                            <table class="categoriestable">
+                                <thead>
+
+                                    <tr>
+                                        <th class="categoriesheading"><%=data.categories[i]%></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <%
+                                    for(var j=0;j<data.items.length;j++){
+                                        if(data.categories[i] === data.items[j].catalogCategory){ %>
+                                        <tr>
+                                            <td class="categoriesitems"><a href="/categories/item/<%= data.items[j].itemCode %>"><%= data.items[j].itemName %></a></td>
+                                        </tr>
+                                    <% }
+                                    }
+                                    %>
+                                </tbody>
+                            </table>
+                        <% }%>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FOOTER -->
+
+            <% include partials/footer.ejs %>
+
+        </div>
+
+    </body>
+    
+</html>

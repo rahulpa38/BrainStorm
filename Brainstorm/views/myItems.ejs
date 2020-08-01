@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+<html lang = 'en'>
+<head>
+  <meta charset="utf-8">
+        <title>BrainStorm</title>
+        <link rel="icon" type="image/x-icon" href="../public/images/favicon.ico"/>
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>
+        <link href="/stylesheets/main.css" rel="stylesheet" type="text/css" media="all">
+        <link href="/fontawesome/css/all.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Indie+Flower%7CGloria+Hallelujah%7CKalam%7CRoboto+Condensed%7CMajor+Mono+Display" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+    <!-- CONTAINER -->
+
+        <div class="container">
+
+            <!-- HEADER -->
+
+            <% include partials/header.ejs %>
+
+
+            <!-- MAIN NAV -->
+
+            <% include partials/user-navigation.ejs %>
+
+
+            <!-- BODY -->
+
+            <div class="jumbotron container">
+
+                <!-- BREADCRUMB -->
+
+                <nav aria-label="breadcrumb">
+                  <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/categories">Categories</a></li>
+                    <li class="breadcrumb-item"><a href="/item">Item</a></li>
+                    <li class="breadcrumb-item" aria-current="page">My Brainpicks</li>
+                  </ol>
+                </nav>
+
+                <div class="row">
+                    <div class="col-lg-2 col-sm-12">
+
+                        <!-- SIDENAV -->
+
+                        <% include partials/site-navigation.ejs %>
+                    </div>
+
+                    <div id="content" class="col-lg-10 col-sm-12">
+
+                    <table id="tab1">
+                          <tr>
+                              <th>Brainpicks</th>
+                              <th>Category</th> 
+                              <th>My Rating</th>
+                              <th>Read</th>
+                              <th></th>
+                          </tr>
+
+      
+                          <%if(data.userProfile!=null){%>
+                          <%for(var i=0;i<data.userProfile._userList.length;i++){%>
+                            <tr>
+                              <td><a href="/categories/item/<%=data.userProfile._userList[i].itemCode%>"><%=data.userProfile._userList[i].itemName%></a></td>
+                              <td><%=data.userProfile._userList[i].catalogCategory%></td>
+                              <td><%=data.userProfile._userList[i].rating%></td>
+                              <td><%=data.userProfile._userList[i].madeIt%></td>
+                              <td>
+                                <a class="button" href="/categories/item/<%=data.userProfile._userList[i].itemCode%>">Update</a>
+                                <a class="button" href="/myItems/delete/<%=data.userProfile._userList[i].itemCode%>">Delete</a>
+                              </td>
+                            </tr>
+                          <%}}else{%>
+                          <%console.log("Inside else of myItems: "+data.userProfile);}%>
+                       </table>
+                        <br>
+                        <br>
+                       <p id="share">We're eager to hear your thoughts and philosophies, click <a href="/myitems">here</a> to contribute!</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <% include partials/footer.ejs %>
+
+        </div>
+
+    </body>
+
+</html>

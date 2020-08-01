@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>BrainStorm</title>
+        <link rel="icon" type="image/x-icon" href="assests/img/favicon.ico"/>
+        <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css"/>    
+        <link href="/stylesheets/main.css" rel="stylesheet" type="text/css" media="all">
+        <link href="/fontawesome/css/all.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Indie+Flower%7CGloria+Hallelujah%7CKalam%7CRoboto+Condensed%7CMajor+Mono+Display">
+    </head>
+    <body>
+
+        <!-- CONTAINER -->
+
+        <div class="container">
+
+            <!-- HEADER -->
+
+            <% include partials/header.ejs %>
+
+
+            <!-- MAIN NAV -->
+
+            <% include partials/user-navigation.ejs %>
+
+
+            <!-- BODY -->
+
+            <div class="jumbotron container">
+                
+                <div class="row">
+                    <div class="col-lg-2 col-sm-12">
+                        
+                        <!-- SIDENAV -->
+
+                        <% include partials/site-navigation.ejs %>
+                    </div>
+                    
+                    <div id="content" class="col-lg-10 col-sm-12">
+                        
+                        <!-- MAIN CONTENT -->
+                        
+                        <p>Brainstorm is a collection of brain pickings on the philosophies of life and existence from the folks who commute the London Underground, the New York City Subway, and the Shanghai Metro. The intent of this site is threefold - to spread the wisdom of the common man, to give a shoulder during the gloomy days and to inspire people into action.</p>
+                        <br>
+                        <img id="socrates" src="/images/socrates" alt="The unexamined life isn't worth living.">
+                        <br>
+                        <br>
+                        <p>The Brain Storm book is a compilation of all the brain-pickings up to the January of 2019. You could buy this at our <a href="#store">store</a> section.</p>
+                        
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <% include partials/footer.ejs %>
+
+        </div>
+
+    </body>
+
+</html>

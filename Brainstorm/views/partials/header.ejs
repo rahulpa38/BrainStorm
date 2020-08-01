@@ -1,0 +1,22 @@
+<header class="container">
+    <div id="login" class="row">
+        <div class="col-xs-12">
+            <%if(isloggedin){%>
+              <span>Welcome <%=user.firstName%>!</span>
+            <%}else{%>
+              <span>Not signed in.</span><%}%>
+        </div>
+    </div>
+
+    <div id="logo" class="row">
+        <div class="col-xs-12 justify-content-center">
+            <img src="/images/logo.jpg" alt="Brainstorm">
+        </div>
+    </div>
+
+    <div id="title" class="row">
+        <div  class="col-xs-12 justify-content-center">
+            <h1>brainstorm</h1>
+        </div>
+    </div>
+</header>
