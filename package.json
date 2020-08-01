@@ -18,7 +18,7 @@
     "express-session": "^1.16.1",
     "express-validator": "^5.3.1",
     "mongodb": "*",
-    "mongoose": "^5.4.22",
+    "mongoose": "^5.7.5",
     "multer": "*",
     "passport": "*",
     "passport-http": "*",
